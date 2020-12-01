@@ -5,8 +5,10 @@
   "dependencies": {
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
-    "@testing-library/user-event": "latest",
-    "clsx": "latest",
+    "@testing-library/user-event": "12.2.2",
+    "babel": "^6.23.0",
+    "jsx": "^0.9.89",
+    "node": "^15.2.1",
     "node-sass": "4.14.1",
     "react": "^17.0.1",
     "react-dom": "latest",

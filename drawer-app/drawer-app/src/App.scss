@@ -2,15 +2,55 @@ $font-stack: helvetica;
 $primary-color: rgb(0, 0, 0);
 $secondary-color: rgb(255, 255, 255);
 
+header {
+  writing-mode: horizontal-tb;
+  text-indent: 3em;
+  text-align: start horizontal;
+  text-align: end horizontal;
+  display: flex;
+  background:black;
+  align-items:left;
+  box-sizing:border-box;
+  width:760px;
+  display:block;
+  flex:1 50%;
+  align-self:left;
+  padding:1em;
+}
+#drawer-episode-title {
+  writing-mode: horizontal-tb;
+  display: inline-flex;
+  align-items:right
+  
+}
+#drawer-episode-meta
+
 body {
 
   background-color:$secondary-color;
 }
 
-#drawer-episode-title {
-  header { display: inline;
-  
-  }
+
+#Toggle{
+  position: relative;
+}
+
+button {
+  appearance: button;
+  position: absolute;
+  right: abs($number: 5em);
+  writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-shadow: none;
+  display: inline-block;
+  text-align: right;
+  align-items: flex-end;
+  cursor: default 
 }
 
 #drawer {
@@ -18,11 +58,11 @@ body {
   font: 100% $font-stack;
   color: $secondary-color;
   background-color:$primary-color;
-  
+
   li { display: inline-block; }
-  position: fixed;
+  position: absolute;
   bottom: abs($number: 0);
-  
+  size: relative;
   height: 8rem;
   width:100%;
   overflow: hidden;
