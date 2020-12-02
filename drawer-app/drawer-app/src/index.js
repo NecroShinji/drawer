@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Drawer from './Drawer';
 
 ReactDOM.render(
   <React.StrictMode>
-     <App />
+    
+     <Drawer />
     </React.StrictMode>,
  document.getElementById('root'));
  

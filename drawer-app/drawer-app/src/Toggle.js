@@ -1,28 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import { Button } from '@material-ui/core';
 class Toggle extends React.Component {
    constructor(props) {
       super(props);
       this.state = { isToggleOn: true };
-      
-      function handleChange(event) {
-         return Toggle(event.target.value);
-      }
-      function handleChange2(event) {
-         return Toggle(event.target.value);
-      }
-     
-      
-      <form>
-        <label htmlFor="Drawer">Name: </label>
-        <input onChange={handleChange} id="ToggleOpen" />
-      </form>;
-      
-      <form>
-        <label htmlFor="Drawer">Name: </label>
-        <input onChange={handleChange2} id="ToggleClose" />
-      </form>;
       
       this.handleClick = this.handleClick.bind(this);
    }
@@ -37,10 +19,10 @@ class Toggle extends React.Component {
    
    render() {
       return (
-         <button onClick={this.handleClick}>
+         <Button onClick={this.handleClick}>
             {this.state.isToggleOn ? '⁀' : '‿'}
       
-            </button>
+            </Button>
       );
    }
 }
