@@ -12,9 +12,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import DrawerEpisodeItem from './DrawerEpisodeItem';
+import './App.scss';
 
 const drawerHeight = 240;
 
@@ -23,23 +22,21 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   
-  
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  hide: {
-    display: 'none',
-  },
+
   drawer: {
     height: drawerHeight,
     flexGrow: 480,
   },
   drawerPaper: {
     height: drawerHeight,
+    flexGrow: 480,
   },
   drawerHeader: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'center-bottom',
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
@@ -52,9 +49,11 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginBottom: -drawerHeight,
+    marginBottom: drawerHeight,
   },
   contentShift: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
@@ -96,7 +95,7 @@ export default function PersistentDrawerBottom() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Persistent drawer
+            Drawer
           </Typography>
         </Toolbar>
       </AppBar>
@@ -112,27 +111,35 @@ export default function PersistentDrawerBottom() {
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'utd' ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
+            
           </IconButton>
         </div>
-        <Divider />
+       
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <icon /> : <icon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+        <div className="drawer-episode-title">
+          <strong>Episode</strong>
+          <i>icon</i>
+          <em>Politics of Hair</em>
+        </div>
+        
+        <div className="drawer-episode-meta">
+          <strong>See All</strong>
+          <em>14 Stories</em>
+          <i></i>
+      
+        </div>
+          
         </List>
         <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <icon /> : <icon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <ul>
+        <DrawerEpisodeItem />
+        <DrawerEpisodeItem />
+        <DrawerEpisodeItem />
+        <DrawerEpisodeItem />
+        <DrawerEpisodeItem />
+      </ul>
       </Drawer>
+
     </div>
   );
 }
